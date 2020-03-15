@@ -1,4 +1,3 @@
-require 'pry'
 require "./config/environment"
 require "./app/models/user"
 class ApplicationController < Sinatra::Base
@@ -41,7 +40,6 @@ class ApplicationController < Sinatra::Base
 		if user && user.authenticate(params[:password])
 			session[:user_id] = user.id
 			
-pry
       redirect "/success"
     else
       redirect "/failure"
